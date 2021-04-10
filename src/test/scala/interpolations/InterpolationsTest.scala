@@ -1,8 +1,8 @@
 package interpolations
 
-import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.FunSuite
 
-class InterpolationsTest extends AnyFunSuite {
+class InterpolationsTest extends FunSuite {
 
   test("basic test") {
     val result = Interpolations.doSInterpolation(22, "Lukasz")
