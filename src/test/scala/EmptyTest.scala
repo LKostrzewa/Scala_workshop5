@@ -1,5 +1,5 @@
-import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.FunSuite
 
-class EmptyTest extends AnyFunSuite {
+class EmptyTest extends FunSuite {
 
 }
