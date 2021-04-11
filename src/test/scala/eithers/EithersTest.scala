@@ -39,6 +39,12 @@ class EithersTest extends FunSuite {
 
     assert(right.toSeq.length == 1)
     assert(left.toSeq.isEmpty)
+
+    val success: Either[Throwable, Int] = Right(5)
+    val failure: Either[Throwable, Int] = Left(new RuntimeException)
+
+    assert(success.toTry.isSuccess)
+    assert(failure.toTry.isFailure)
   }
 
   test("yield test") {
