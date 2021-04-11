@@ -65,5 +65,14 @@ class OptionsTest extends FunSuite {
     assert(o1.getOrElse(0) == 0)
   }
 
+  test("conversion test") {
+    assert(o2.toLeft().isLeft)
+    assert(o1.toLeft().isRight)
 
+    assert(o2.toRight().isRight)
+    assert(o1.toRight().isLeft)
+
+    assert(o1.toRight() == Left(()))
+    assert(o2.toLeft() == Left(1))
+  }
 }
