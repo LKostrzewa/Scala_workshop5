@@ -18,7 +18,7 @@ class Service() {
     null
   }
 
-  // Jezeli zawodnik o imieniu Neymar nie znajduje sie w o1 zwroc o2 jezeli ono jest puste zwroc null
+  // Jezeli zawodnik o imieniu Neymar nie znajduje sie w o1 zwroc wartosc o2 jezeli ono jest puste zwroc null
 
   def task2(): Player = {
     null
