@@ -12,6 +12,7 @@ class TriesTest extends FunSuite {
   test("basic try test") {
     assert(success.isSuccess)
     assert(success == Success(13))
+    assert(success == Try(13))
     assert(failure.isFailure)
   }
 
