@@ -21,9 +21,11 @@ object StudentsRepository {
     students(id)
   }
 
-  def synchronizedGetStudent(id: Int): Student = synchronized {
-    println("Executing...")
-    Thread.sleep(5000)
-    students(id)
+  def synchronizedGetStudent(id: Int): Future[Student] = Future {
+    synchronized {
+      println("Executing...")
+      Thread.sleep(5000)
+      students(id)
+    }
   }
 }

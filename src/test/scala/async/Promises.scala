@@ -1,4 +1,5 @@
-import async.{Student, StudentsRepository}
+package async
+
 import org.scalatest.FunSuite
 
 import scala.concurrent.ExecutionContext.Implicits.global
@@ -101,5 +102,7 @@ class Promises extends FunSuite {
     StudentsRepository.synchronizedGetStudent(1)
     StudentsRepository.synchronizedGetStudent(2)
     StudentsRepository.synchronizedGetStudent(3)
+
+    Thread.sleep(20_000L)
   }
 }

@@ -1,4 +1,5 @@
-import async.{Student, StudentsRepository}
+package async
+
 import org.scalatest.FunSuite
 
 import scala.concurrent.ExecutionContext.Implicits.global
