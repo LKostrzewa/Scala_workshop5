@@ -10,7 +10,7 @@ class Futures extends FunSuite {
 
   test("Should read student") {
     val student: Future[Student] = StudentsRepository.getStudent(0)
-    val studentValue = Await.result(student, Duration.Inf)
+    val studentValue: Student = Await.result(student, Duration.Inf)
 
     assert(student.value.get.isSuccess)
     assert(studentValue.id === 0)
@@ -57,17 +57,9 @@ class Futures extends FunSuite {
     assert(isFailure)
   }
 
-  test("Should execute onSuccess callback") {
-    val student: Future[Student] = StudentsRepository.getStudent(0)
-    student.onC
-
-    Await.ready(student, Duration.Inf)
-
-  }
-
   test("Should satisfy filter predicate") {
     val student: Future[Student] = StudentsRepository.getStudent(0)
-    val filteredStudent = student filter {student => {
+    val filteredStudent = student filter { student => {
       student.semester < 10
     }}
 
@@ -113,7 +105,7 @@ class Futures extends FunSuite {
 
   test("Should recover on error") {
     val student: Future[Object] = StudentsRepository.getStudent(-1) recover {
-      case e: java.lang.Exception => None
+      case e: java.lang.IndexOutOfBoundsException => None
     }
 
     val studentResult = Await.result(student, Duration.Inf)

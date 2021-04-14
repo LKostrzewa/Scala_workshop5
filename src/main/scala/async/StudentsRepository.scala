@@ -20,4 +20,10 @@ object StudentsRepository {
   def getStudent(id: Int): Future[Student] = Future {
     students(id)
   }
+
+  def synchronizedGetStudent(id: Int): Student = synchronized {
+    println("Executing...")
+    Thread.sleep(5000)
+    students(id)
+  }
 }
