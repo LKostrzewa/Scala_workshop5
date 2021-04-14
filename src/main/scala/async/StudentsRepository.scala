@@ -13,7 +13,7 @@ object StudentsRepository {
     new Student(4, "Michał Wójcik", 1)
   )
 
-  def getAllStudents(): Future[List[Student]] = Future {
+  def getAllStudents: Future[List[Student]] = Future {
     students
   }
 
